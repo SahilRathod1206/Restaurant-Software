@@ -1,0 +1,528 @@
+body {
+    background-color: #fdf4f4;
+    font-family: Arial, sans-serif;
+}
+
+.pricing-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.pricing-container h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.pricing-container p {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.pricing-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.pricing-container .plan {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.pricing-container .plan:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Popular Plan Style */
+.pricing-container .popular {
+    background: #131c2b;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glowing border effect for Popular Plan */
+.pricing-container .popular::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.3), transparent);
+    transform: rotate(30deg);
+    animation: glowEffect 3s infinite linear;
+}
+
+@keyframes glowEffect {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Button Animations */
+.pricing-container .btn {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    color: white;
+}
+
+/* Button Hover Effects */
+.pricing-container .btn:hover {
+    transform: translateY(-3px);
+}
+
+.pricing-container .btn-outline-danger {
+    background: transparent;
+    border: 2px solid red;
+    color: red;
+}
+
+.pricing-container .btn-outline-danger:hover {
+    background: red;
+    color: white;
+}
+
+/* Feature Item Animation */
+.pricing-container .feature-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.5s ease-in-out forwards;
+    gap: 10px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Delay animation for each feature item */
+.pricing-container .feature-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.pricing-container .feature-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.pricing-container .feature-item:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.pricing-container .feature-item:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.pricing-container .feature-item:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.pricing-container .feature-item:nth-child(6) {
+    animation-delay: 1.2s;
+}
+
+.pricing-container .feature-item:nth-child(7) {
+    animation-delay: 1.4s;
+}
+
+.pricing-container .check-icon {
+    font-size: 20px;
+    color: red;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .pricing-table {
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+
+    .pricing-container .features {
+        display: block;
+    }
+}
+
+
+/* POS Section */
+.pos-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.pos-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Items Container */
+.pos-section .items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual Item */
+.pos-section .item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.pos-section .item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.pos-section .item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Image Bounce Effect */
+.pos-section .item:hover img {
+    transform: scale(1.1);
+}
+
+/* Number Animation */
+.pos-section .item .number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: red;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pos-section span {
+    color: red;
+}
+
+/* Description Animation */
+.pos-section .item .description {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #666;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .pos-section .items {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Pricing Review Section */
+.pricing-reviews-section {
+    padding: 50px 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pricing-reviews-section h2 {
+    font-weight: 600;
+    margin: 50px;
+}
+
+/* Reviews Container */
+.pricing-reviews-section .reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual Review Box */
+.price-review {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 45%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInUp 0.7s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hover Effect */
+.price-review:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Review Logo */
+.price-review .review-logo img {
+    width: 100px;
+    height: auto;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeInUp 0.7s ease-in-out forwards;
+    animation-delay: 0.3s;
+}
+
+/* Review Text */
+.price-review .review-text {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Reviewer Details */
+.price-review .reviewer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Reviewer Image */
+.price-review .reviewer img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeIn 0.7s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+/* Reviewer Name */
+.price-review .reviewer-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555;
+    opacity: 0;
+    transform: translateY(5px);
+    animation: fadeInUp 0.7s ease-in-out forwards;
+    animation-delay: 0.6s;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .pricing-reviews-section .reviews-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .price-review {
+        width: 90%;
+    }
+}
+
+
+/* FAQ Section */
+.faq-section {
+    padding: 50px 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.faq-section h2 {
+    font-weight: 600;
+    margin: 50px;
+}
+
+/* FAQ Container */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Individual FAQ Item */
+.faq-item {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover Effect */
+.faq-item:hover {
+    background: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* FAQ Question */
+.faq-question {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+/* Change text color when active */
+.faq-item.active .faq-question {
+    color: red;
+}
+
+/* FAQ Answer */
+.faq-answer {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+/* Expand Answer */
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    opacity: 1;
+}
+
+/* FAQ Toggle (+ / -) */
+.faq-toggle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: red;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Rotate toggle when active */
+.faq-item.active .faq-toggle {
+    transform: rotate(01deg);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .faq-container {
+        width: 90%;
+    }
+}
